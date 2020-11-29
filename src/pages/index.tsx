@@ -12,8 +12,6 @@ const Home = () => {
   })
 
   const signUp = () => {
-    console.log(authValues.email)
-    console.log(authValues.password)
     firebase.auth().createUserWithEmailAndPassword(authValues.email, authValues.password).catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -32,22 +30,28 @@ const Home = () => {
       ...authValues,
       [name]: value
     })
-    console.log(authValues)
   }
-
-  const confirm = () => {
-    console.log(authValues.email)
-    console.log(authValues.password)
-  }
-
   return (
-    <>
-      <PageTitle title={'welcome to tokyo'} color={'red'}></PageTitle>
-      <Input name='email' type="text" handleFunc={handleInputChange}/>
-      <Input name='password' type='password' handleFunc={handleInputChange}/>
-      <Button text="confirm" handleFunc = {confirm}/>
-      <Button text="signup" handleFunc = {signUp}/>
-    </>
+    <div className="container">
+      <PageTitle title={'TODO-LIST'} color={'black'}></PageTitle>
+      <div className="input-area">
+        <Input name='email' type="text" placeholder="email" handleFunc={handleInputChange}/>
+      </div>
+      <div className="input-area">
+        <Input name='password' type='password' placeholder="password" handleFunc={handleInputChange}/>
+      </div>
+      <Button text="signup" value={authValues} handleFunc={signUp}/>
+      <style jsx>
+          {`
+            .container {
+              text-align: center;
+            }
+            .input-area {
+              margin-bottom: 20px;
+            }
+          `}
+        </style>
+    </div>
   )
 }
 

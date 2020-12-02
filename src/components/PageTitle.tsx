@@ -1,5 +1,15 @@
+import * as React from 'react';
+
 export const PageTitle = (props) => {
     return (
-        <h1 style={{color: props.color}}>{props.title}</h1>
+        <div style={{color: props.color}}>{props.title}</div>
     )
 }
+
+
+
+// export const PageTitle = () => {
+//     return (
+//         <div>test</div>
+//     )
+// }

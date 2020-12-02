@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test PageTitle 1`] = `
+<div
+  style={
+    Object {
+      "color": undefined,
+    }
+  }
+/>
+`;

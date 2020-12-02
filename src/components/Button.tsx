@@ -1,8 +1,10 @@
+import * as React from 'react';
+
 type ButtonProps = {
     text: string,
     value: {
         email: string,
-        password: string,
+        password: string | number,
     }
     handleFunc: () => void
 }

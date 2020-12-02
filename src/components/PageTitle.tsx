@@ -5,11 +5,3 @@ export const PageTitle = (props) => {
         <div style={{color: props.color}}>{props.title}</div>
     )
 }
-
-
-
-// export const PageTitle = () => {
-//     return (
-//         <div>test</div>
-//     )
-// }

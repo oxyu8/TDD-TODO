@@ -36,10 +36,10 @@ const Home = () => {
     <div className="container">
       <PageTitle title={'TODO-LIST'} color={'black'}></PageTitle>
       <div className="input-area">
-        <Input name='email' type="text" placeholder="email" handleFunc={handleInputChange}/>
+        <Input name='email' type="text" placeholder="email" value={authValues.email} handleFunc={handleInputChange}/>
       </div>
       <div className="input-area">
-        <Input name='password' type='password' placeholder="password" handleFunc={handleInputChange}/>
+        <Input name='password' type='password' placeholder="password" value={authValues.password} handleFunc={handleInputChange}/>
       </div>
       <Button text="signup" value={authValues} handleFunc={signUp}/>
       <style jsx>

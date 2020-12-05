@@ -13,10 +13,10 @@ test('should display the passed props', () => {
         handleFunc: handleFuncMock
     }
     const wrapper = shallow(<Button {...testProps}/>);
-    const actual = wrapper.find('.button').text();
+    const actual = wrapper.find('button').text();
     expect(actual).toEqual('test')
 
     wrapper.setProps({...testProps, text: 'changed'})
-    const actual2 = wrapper.find('.button').text();
+    const actual2 = wrapper.find('button').text();
     expect(actual2).toEqual('changed')
 })

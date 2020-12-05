@@ -4,7 +4,7 @@ import {PageTitle} from '../components/PageTitle'
 import { Button } from '../components/Button'
 import { Input } from '../components/Input'
 import firebase from '../../firebaseConfig'
-
+import Link from 'next/link'
 
 const Home = () => {
   const [authValues, setAuthValues] = useState({
@@ -42,6 +42,11 @@ const Home = () => {
         <Input name='password' type='password' placeholder="password" value={authValues.password} handleFunc={handleInputChange}/>
       </div>
       <Button text="signup" value={authValues} handleFunc={signUp}/>
+      <div>
+        <Link href="/signIn">
+          <a>already sign up ?</a>
+        </Link>
+      </div>
       <style jsx>
           {`
             .container {

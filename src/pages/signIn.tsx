@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
+import Link from 'next/link'
 import firebase from '../../firebaseConfig'
 import { PageTitle } from '../components/PageTitle'
 import { Button } from '../components/Button'
@@ -12,15 +13,16 @@ const SignIn = () => {
     })
 
     const signIn = () => {
-        firebase.auth().createUserWithEmailAndPassword(authValues.email, authValues.password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-    })
-    .then((result) => {
-        console.log(result)
-    })
+        firebase.auth().signInWithEmailAndPassword(authValues.email, authValues.password)
+        .then((user) => {
+            console.log(user)
+            alert('success')
+        })
+        .catch( (error) => {
+            const errorCode = error.code
+            const errorMessage = error.message
+            console.log(errorCode, errorMessage)
+        })
     }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,6 +43,11 @@ const SignIn = () => {
             <Input name='password' type='password' placeholder="password" value={authValues.password} handleFunc={handleInputChange}/>
             </div>
             <Button text="signup" value={authValues} handleFunc={signIn}/>
+            <div>
+                <Link href="/">
+                    <a>create a new account</a>
+                </Link>
+            </div>
             <style jsx>
                 {`
                 .container {

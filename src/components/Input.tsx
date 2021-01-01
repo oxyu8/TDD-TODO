@@ -11,7 +11,14 @@ type InputProps = {
 export const Input = (props: InputProps) => {
     return (
         <div>
-            <input className="input" placeholder={props.placeholder} type={props.type} value={props.value} name={props.name} onChange={props.handleFunc}/>
+            <input
+                className="input"
+                placeholder={props.placeholder}
+                type={props.type}
+                value={props.value}
+                name={props.name}
+                onChange={props.handleFunc}
+            />
             <style jsx>
                 {`
                     .input {

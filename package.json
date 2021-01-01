@@ -12,10 +12,14 @@
     "test:coverage": "jest --collect-coverage"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "1.5.0",
     "firebase": "8.1.1",
     "next": "10.0.2",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-redux": "7.2.2",
+    "redux": "4.0.5",
+    "redux-logger": "3.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.8",
@@ -28,7 +32,9 @@
     "@types/node": "14.14.9",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
+    "@types/react-redux": "7.1.11",
     "@types/react-test-renderer": "17.0.0",
+    "@types/redux-logger": "3.0.8",
     "babel-loader": "^8.2.1",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.5",

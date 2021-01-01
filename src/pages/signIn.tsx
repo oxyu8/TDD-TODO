@@ -1,28 +1,25 @@
 import * as React from 'react'
 import { useState } from 'react'
 import Link from 'next/link'
-import firebase from '../../firebaseConfig'
 import { PageTitle } from '../components/PageTitle'
 import { Button } from '../components/Button'
 import { Input } from '../components/Input'
 
 const SignIn = () => {
+
+    const users = [
+        {email: "test@gmail.com", password: "111111"},
+    ]
+
     const [authValues, setAuthValues] = useState({
         email: '',
         password: '',
     })
 
     const signIn = () => {
-        firebase.auth().signInWithEmailAndPassword(authValues.email, authValues.password)
-        .then((user) => {
-            console.log(user)
-            alert('success')
-        })
-        .catch( (error) => {
-            const errorCode = error.code
-            const errorMessage = error.message
-            console.log(errorCode, errorMessage)
-        })
+        if (authValues.email == users[0].email && authValues.password == users[0].password) {
+            console.log("success")
+        }
     }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +39,7 @@ const SignIn = () => {
             <div className="input-area">
             <Input name='password' type='password' placeholder="password" value={authValues.password} handleFunc={handleInputChange}/>
             </div>
-            <Button text="signup" value={authValues} handleFunc={signIn}/>
+            <Button text="signIn" value={authValues} handleFunc={signIn}/>
             <div>
                 <Link href="/">
                     <a>create a new account</a>

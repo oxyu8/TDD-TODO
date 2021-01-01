@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme'
-import Home from '../index'
+import Home from '../signup'
 import { PageTitle } from '../../components/PageTitle'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
